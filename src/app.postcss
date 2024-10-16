@@ -1,0 +1,17 @@
+@import "reset.postcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply bg-gray-100;
+		font-family: "Wordle";
+	}
+}
+
+@font-face {
+	font-family: "Wordle";
+	src: url("/franklin-normal-700.woff2") format("woff2");
+}
