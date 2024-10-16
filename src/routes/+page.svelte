@@ -265,9 +265,9 @@
 	});
 </script>
 
-<h1 class="mb-4 pt-6 text-center text-2xl md:mb-8 md:text-4xl">
+<h1 class="mb-2 pt-4 text-center text-2xl md:mb-8 md:text-4xl">
 	Wordle Guess
-	<br />
+	<br class="hidden md:block" />
 	Probability
 </h1>
 
@@ -346,7 +346,7 @@
 	{#each keyboard_rows as keyboard_row, i}
 		<div class="keyboard-row">
 			{#if i === 2}
-				<button class="keyboard-row-key special" disabled={isEnterDisabled()}>ENTER</button>
+				<button class="keyboard-row-key special" disabled={isEnterDisabled()} onclick={handleEnter}>ENTER</button>
 			{/if}
 			{#each keyboard_row as key}
 				{@const color = green_letters.includes(key)
@@ -420,7 +420,7 @@
 	}
 	.valid-guess-count {
 		@apply absolute top-1/2 -translate-y-1/2 translate-x-full;
-		@apply -right-1.5 md:-right-4;
+		@apply -right-2 md:-right-4;
 		@apply text-[10px] md:text-base;
 
 		@apply flex flex-col md:flex-row;
@@ -464,7 +464,7 @@
 		@apply gap-x-1;
 	}
 	.keyboard-row-key {
-		@apply h-8 w-6 md:h-14 md:w-10;
+		@apply h-10 w-8 md:h-14 md:w-10;
 		@apply flex items-center justify-center;
 
 		@apply rounded;
@@ -474,7 +474,7 @@
 		@apply text-base md:text-xl;
 
 		&.special {
-			@apply w-10 md:w-16;
+			@apply w-12 md:w-16;
 
 			@apply text-[10px] md:text-xs;
 		}
