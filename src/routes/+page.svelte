@@ -2,8 +2,10 @@
 	import { Delete, X } from "lucide-svelte";
 	import { SvelteMap } from "svelte/reactivity";
 
-	import total_vocabulary_raw from "$lib/complete_vocabulary.txt?raw";
-	let total_vocabulary = total_vocabulary_raw.toUpperCase().split("\n").sort();
+	// import total_vocabulary_raw from "$lib/complete_vocabulary.txt?raw";
+	// let total_vocabulary = total_vocabulary_raw.toUpperCase().split("\n").sort();
+	import { vocabulary } from "$lib/2024-10-18";
+	let total_vocabulary = vocabulary.map((str) => str.toUpperCase()).sort();
 
 	type RowNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
